@@ -43,7 +43,7 @@
         status: false,
         web_socket: {},
         server_response: [],
-        server_url: 'ws://localhost:3000/signed/listen/eyJfcmFpbHMiOnsibWVzc2FnZSI6ImV5SnNhV05sYm5ObFgydGxlU0k2SW1ZeU5UZGxZMlJoWkMwMUluMD0iLCJleHAiOiIyMDIxLTA2LTA0VDIxOjE1OjIyLjA2NFoiLCJwdXIiOm51bGx9fQ==--9a7be54ed206e964f05d73232821fd90b4856388abf3a817325471f54b76081d/B478047F21D56C9DDFA422BE1F7149AF',
+        server_url: 'ws://ws.eu.rocketcyber.com/signed/listen/eyJfcmFpbHMiOnsibWVzc2FnZSI6ImV5SnNhV05sYm5ObFgydGxlU0k2SWpJeU16UTJPVGsxWmkwek1TSjkiLCJleHAiOiIyMDIxLTA3LTIyVDEwOjA2OjUzLjgyNFoiLCJwdXIiOm51bGx9fQ==--77e05da89f523401d874ad5b7923230a0f067ed91df22bdee6e1adee73e155ff/EBB3A27D170B2A74A8D13942A5496',
         options: {
           mode: 'code'
         },
@@ -84,7 +84,19 @@
               "ip": "192.168.0.1",
               "meta": {}
             }
-          }
+          },
+          {
+            type: "upload_agent_log",
+            payload: {}
+          },
+          {
+            type: "ack",
+            payload: "06234af8c9364c0c4f28ac30bad5af0e"
+          },
+          {
+            type: "log",
+            payload: {}
+          },
         ]
       }
     },
@@ -116,7 +128,7 @@
         this.web_socket = new WebSocket(this.server_url)
 
         this.web_socket.onmessage = msg => {
-          //console.log(msg);
+          console.log(msg);
           this.server_response.unshift(msg.data)
         }
 
