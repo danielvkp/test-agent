@@ -1,6 +1,8 @@
 <template>
   <div class="">
 
+    <v-chip class="white--text mb-3" small :color="status ? 'green' : 'red'">{{status ? 'online' : 'offline'}}</v-chip>
+
     <v-row dense align="center">
       <v-col cols="12" md="4">
         <v-text-field v-model="server_url" label="Server URL">
@@ -38,6 +40,7 @@
     name: 'Agent',
     data() {
       return {
+        status: false,
         web_socket: {},
         server_response: [],
         server_url: 'ws://localhost:3000/signed/listen/eyJfcmFpbHMiOnsibWVzc2FnZSI6ImV5SnNhV05sYm5ObFgydGxlU0k2SW1ZeU5UZGxZMlJoWkMwMUluMD0iLCJleHAiOiIyMDIxLTA2LTA0VDIxOjE1OjIyLjA2NFoiLCJwdXIiOm51bGx9fQ==--9a7be54ed206e964f05d73232821fd90b4856388abf3a817325471f54b76081d/B478047F21D56C9DDFA422BE1F7149AF',
@@ -96,7 +99,6 @@
       },
 
       disconect_to_socket() {
-        console.log('diss');
         this.web_socket.close()
         this.web_socket = {}
       },
@@ -114,8 +116,20 @@
         this.web_socket = new WebSocket(this.server_url)
 
         this.web_socket.onmessage = msg => {
-          console.log(msg);
+          //console.log(msg);
           this.server_response.unshift(msg.data)
+        }
+
+        this.web_socket.onopen = () => {
+          this.status = true
+        }
+
+        this.web_socket.onclose = () => {
+          this.status = false
+        }
+
+        this.web_socket.onerror = err => {
+          console.log(err)
         }
 
         setInterval(() => {
