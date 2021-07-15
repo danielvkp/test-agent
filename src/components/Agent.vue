@@ -45,7 +45,7 @@
         web_socket: {},
         server_response: [],
         //server_url: 'ws://ws.eu.rocketcyber.com/signed/listen/eyJfcmFpbHMiOnsibWVzc2FnZSI6ImV5SnNhV05sYm5ObFgydGxlU0k2SWpJeU16UTJPVGsxWmkwek1TSjkiLCJleHAiOiIyMDIxLTA3LTIyVDEwOjA2OjUzLjgyNFoiLCJwdXIiOm51bGx9fQ==--77e05da89f523401d874ad5b7923230a0f067ed91df22bdee6e1adee73e155ff/EBB3A27D170B2A74A8D13942A5496',
-        server_url: 'ws://localhost:5000/signed/listen/eyJfcmFpbHMiOnsibWVzc2FnZSI6ImV5SnNhV05sYm5ObFgydGxlU0k2SWpJeU16UTJPVGsxWmkwek1TSjkiLCJleHAiOiIyMDIxLTA3LTIyVDEwOjA2OjUzLjgyNFoiLCJwdXIiOm51bGx9fQ==--77e05da89f523401d874ad5b7923230a0f067ed91df22bdee6e1adee73e155ff/EBB3A27D170B2A74A8D13942A5496',
+        server_url: 'ws://localhost:3000/signed/listen/eyJfcmFpbHMiOnsibWVzc2FnZSI6ImV5SnNhV05sYm5ObFgydGxlU0k2SWpJeU16UTJPVGsxWmkwek1TSjkiLCJleHAiOiIyMDIxLTA3LTIyVDEwOjA2OjUzLjgyNFoiLCJwdXIiOm51bGx9fQ==--77e05da89f523401d874ad5b7923230a0f067ed91df22bdee6e1adee73e155ff/EBB3A27D170B2A74A8D13942A5496',
         options: {
           mode: 'code'
         },
